@@ -1,0 +1,19 @@
+<div class="card">
+    <div class="card-header">Užduočių sąrašas</div>
+    <div class="card-body">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let product of products; let n=index ">
+                <div class="row">
+                    <div class="col-md-4">{{ n+1 }}. {{ product.name }}</div>    
+                    <div class="col-md-2">{{ product.quantity }}</div>
+                    <div class="col-md-3">{{ product.type }}</div>
+                    <div class="col-md-3">
+                        <a class="btn btn-success" [routerLink]="['/edit', n]">Redaguoti</a> &nbsp;
+                        <button class="btn btn-danger" (click)="deleteProduct(n)">Panaikinti</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+</div>
